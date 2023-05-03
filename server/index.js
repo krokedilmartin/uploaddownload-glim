@@ -2,10 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors');
 const app = express();
 const upload = multer({ dest: 'uploads/' }); // specify the upload directory
-app.use(cors()); // enable CORS for all routes
 
 app.post('/upload', upload.single('image'), (req, res) => {
   const file = req.file;
